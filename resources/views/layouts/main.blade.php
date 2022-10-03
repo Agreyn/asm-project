@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Fixed top navbar example · Bootstrap v5.1</title>
+    <title>Welcome, Ruang Aspirasi Masyarakat</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/navbar-fixed/">
 
@@ -44,28 +44,26 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav ms-auto mb-2 mb-md-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        <li class="nav-item me-3">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <hr class="mt-1 bg-light">
+        <li class="nav-item me-3">
+          <a class="nav-link active" href="/cara-pegajuan">Cara-Pengajuan</a>
         </li>
         <hr class="mt-1 bg-light">
         <li class="nav-item">
-          <a class="nav-link active" href="#">Cara-Pengajuan</a>
-        </li>
-        <hr class="mt-1 bg-light">
-        <li class="nav-item">
-          <a class="nav-link px-4 active btn btn-sm btn-success">Login</a>
+          <a href="/login" class="nav-link px-4 active btn btn-sm btn-success">Login</a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
 
-
   <div class="content">
     @yield('content')
   </div>
  
-
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>  
+   <script src="htztps://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>  
   </body>
 </html>

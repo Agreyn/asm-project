@@ -10,7 +10,7 @@
          </div>
 
          <div class="button-aspirasi">
-            <a href="" class="btn btn-primary px-4 fw-bold my-3">Aspirasi</a>
+            <a href="/aspirasi" class="btn btn-primary px-4 fw-bold my-3">Aspirasi</a>
          </div>
 
          <div class="row mt-4">
