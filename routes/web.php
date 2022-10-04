@@ -16,3 +16,23 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home.index');
 });
+
+Route::get('/cara-pegajuan', function () {
+    return view('home.cara-pegajuan');
+});
+
+Route::get('/aspirasi-masuk', function () {
+    return view('aspirasi.index');
+});
+
+Route::middleware(['guest'])->group(function () {
+    Route::get('/login', function(){
+        return view('users.login.index');
+    });
+
+    Route::get('/registrasi', function(){
+        return view('users.registrasi.index');
+    });
+});
+
+

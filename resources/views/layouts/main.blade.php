@@ -31,6 +31,10 @@
         .title{
             font-size: 11px;
         }
+
+        main{
+          margin-left: 28px;
+        }
       }
     </style>
   </head>
