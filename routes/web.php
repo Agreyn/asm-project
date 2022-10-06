@@ -35,4 +35,20 @@ Route::middleware(['guest'])->group(function () {
     });
 });
 
+Route::get('/home', function(){
+    return view('home-user.dashboard.index');
+});
+
+Route::get('/aspirasi', function(){
+    return view('home-user.aspirasi.index');
+});
+
+Route::get('/profile', function(){
+    return view('home-user.profile.index');
+});
+
+Route::get('/logout', function(){
+    return view('home-user.dashboard.index');
+});
+
 
