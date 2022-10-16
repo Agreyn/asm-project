@@ -36,19 +36,41 @@ Route::middleware(['guest'])->group(function () {
 });
 
 Route::get('/home', function(){
-    return view('home-user.dashboard.index');
+    return view('home-user.dashboard.index', [
+        'title' => 'Dashboard'
+    ]);
 });
 
 Route::get('/aspirasi', function(){
-    return view('home-user.aspirasi.index');
+    return view('home-user.aspirasi.index', [
+        'title' => 'aspirasi'
+    ]);
 });
 
 Route::get('/profile', function(){
-    return view('home-user.profile.index');
+    return view('home-user.profile.index', [
+        'title' => 'Profile'
+    ]);
 });
 
 Route::get('/logout', function(){
     return view('home-user.dashboard.index');
+});
+
+Route::get('/admin', function () {
+    return view('home-admin.dashboard.index');
+});
+
+Route::get('/admin/aspirasi-masuk', function () {
+    return view('home-admin.aspirasi-admin.index');
+});
+Route::get('/admin/feedback', function () {
+    return view('home-admin.feedbacks.index');
+});
+Route::get('/admin/profile', function () {
+    return view('home-admin.profile.index', [
+        'title' => 'Profile'
+    ]);
 });
 
 

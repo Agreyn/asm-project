@@ -3,7 +3,7 @@
 @section('content')
    <div class="container">
       <p class="h3 text-center my-3">Aspirasi Form</p>
-      <form class="row needs-validation" action="/aspirasi" method="POST" novalidate>
+      <form class="row needs-validation" action="/aspirasi" method="POST" enctype="multipart/form-data" novalidate>
          <div class="col-md-6 mb-2">
             <label for="judul_laporan" class="form-label">Judul Laporan *</label>
             <input autocomplete="off" type="text" class="form-control" id="judul_laporan" required>
@@ -29,7 +29,7 @@
 
           <div class="col-md-12 mb-2">
             <label for="image" class="form-label">Image *</label>
-            <input autocomplete="off" type="file" class="form-control" id="image" name="image[]" required>
+            <input autocomplete="off" type="file" class="form-control" id="image" name="image[]" multiple="true" required>
             <div class="valid-feedback">
                image is required
             </div>
