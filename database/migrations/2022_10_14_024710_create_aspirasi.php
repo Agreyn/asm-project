@@ -13,7 +13,7 @@ class CreateAspirasi extends Migration
      */
     public function up()
     {
-        Schema::create('aspirasi', function (Blueprint $table) {
+        Schema::create('aspirasis', function (Blueprint $table) {
             $table->id();
             $table->string('judul');
             $table->timestamp('tgl_pengaduan');

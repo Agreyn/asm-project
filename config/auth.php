@@ -69,6 +69,11 @@ return [
         //     'driver' => 'database',
         //     'table' => 'users',
         // ],
+
+        'aspirasis' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Aspirasi::class,
+        ]
     ],
 
     /*

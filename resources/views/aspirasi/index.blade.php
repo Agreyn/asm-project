@@ -1,35 +1,17 @@
 @extends('layouts.main')
 
 @section('content')
-    <main class="container">
-      <table class="table">
-         <thead>
-            <tr>
-               <th scope="col">#</th>
-               <th scope="col">First</th>
-               <th scope="col">Last</th>
-               <th scope="col">Handle</th>
-            </tr>
-         </thead>
-         <tbody>
-            <tr>
-               <th scope="row">1</th>
-               <td>Mark</td>
-               <td>Otto</td>
-               <td>@mdo</td>
-            </tr>
-            <tr>
-               <th scope="row">2</th>
-               <td>Jacob</td>
-               <td>Thornton</td>
-               <td>@fat</td>
-            </tr>
-            <tr>
-               <th scope="row">3</th>
-               <td colspan="2">Larry the Bird</td>
-               <td>@twitter</td>
-            </tr>
-         </tbody>
-      </table>
+    <main class="container my-3">
+      <div class="row">
+      @foreach ($aspirasis as $aspirasi)
+         <div class="card col-md-4 m-2" style="width: 16rem;">
+            <div class="card-body">
+               <h5 class="card-title fw-bold">{{ $aspirasi->judul }}</h5>
+               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+               <a href="/aspirasi-masuk/{{ $aspirasi->status }}" class="">More...</a>
+            </div>
+         </div>
+      @endforeach
+      </div>
    </main>
 @endsection
