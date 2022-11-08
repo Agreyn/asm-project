@@ -17,6 +17,7 @@ class CreateAspirasi extends Migration
             $table->id();
             $table->string('judul');
             $table->timestamp('tgl_pengaduan');
+            $table->string('slug')->uniqid();
             $table->string('alamat');
             $table->foreignId('user_id');
             $table->string('status')->default('masuk');

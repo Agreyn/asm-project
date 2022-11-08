@@ -49,8 +49,9 @@
                   @endguest
             
                   @auth
+                  @php($url = Auth::user()->role == 'admin' ? 'admin' : 'home')
                      <li class="nav-item">
-                        <a class="px-2 nav-link active" aria-current="page" href=""><i class="bi bi-person-check"></i> {{ Auth::user()->nama_lengkap }}</a>
+                        <a class="px-2 nav-link active" aria-current="page" href="/{{ $url }}"><i class="bi bi-person-check"></i> {{ Auth::user()->nama_lengkap }}</a>
                      </li>   
                   @endauth
                </ul>

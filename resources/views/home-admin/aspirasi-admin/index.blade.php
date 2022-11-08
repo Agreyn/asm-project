@@ -20,14 +20,14 @@
       <tbody>
       @foreach ($aspirasis as $aspirasi)
         <tr>
-          <td>{{ $loop->index }}</td>
+          <td>{{ $loop->iteration }}</td>
           <td>{{ $aspirasi->judul }}</td>
           <td>{{ $aspirasi->tgl_pengaduan }}</td>
           <td>{{ $aspirasi->alamat }}</td>
           <td>
             <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-              <a href="/aspirasi-masuk/detail/{{ $aspirasi->id }}" class="btn btn-sm btn-success"><i class="bi bi-eye"></i></a>
-              <a href="/aspirasi-masuk/edit/{{ $aspirasi->id }}" class="btn btn-sm btn-warning"><i class="bi bi-pen"></i></a>
+              <a href="/admin/aspirasi-show/{{ $aspirasi->slug }}" class="btn btn-sm btn-success"><i class="bi bi-eye"></i></a>
+              <a href="/admin/aspirasi-edit/{{ $aspirasi->slug }}" class="btn btn-sm btn-warning"><i class="bi bi-pen"></i></a>
               <form action="/aspirasi-masuk" method="post">
                 <button type="submit" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
               </form>

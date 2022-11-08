@@ -39,6 +39,8 @@ class AspirasiController extends Controller
                 'body' => 'required', 
             ]);
 
+            $validateData['slug'] = str_replace(' ', '-', $validateData['judul']);
+
             foreach($aspirasis as $aspirasi){
                 if($validateData['judul'] == $aspirasi->judul && $validateData['alamat'] == $aspirasi->alamat){
                     return redirect('/aspirasi/create')->with('status', 'Data telah ada');
@@ -47,25 +49,28 @@ class AspirasiController extends Controller
 
             $validateData['user_id'] = Auth::user()->id;
 
-             Aspirasi::create($validateData);
+            Aspirasi::create($validateData);
 
             $validateImg = $request->validate([
-                'img' => 'required|max:2045'
+                'img' => 'max:2045'
             ]);
 
             if($request->hasFile('img')){
                 $files = $request->file('img');
 
                 foreach($files as $file){
-                    $name = time();
-                    $ext = $file->getClientOriginalExtension();
-                    $newName = $name . '.' . $ext;
+                    $name = $file->hashName();
+                    // $ext = $file->getClientOriginalExtension();
+                    // $newName = $name . '.' . $ext;
 
-                    Storage::putFileAs('public', $file , $newName);
-
+                    Storage::putFileAs('public', $file , $name);
+                    $id = Aspirasi::where('judul', $request->judul)->get();
+                    foreach($id as $i){
+                        $id = $i->id;
+                    }
                     $data = [
-                        'path' => 'storage/'. $newName,
-                        'aspirasi_id' => Auth::user()->id,
+                        'path' => 'storage/'. $name,
+                        'aspirasi_id' => $id,
                     ];
                     Image::create($data);
                 }
@@ -85,11 +90,11 @@ class AspirasiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        return view('home-user.aspirasi-all.index', [
-            'title' => 'Aspirasi-all',
-            'aspirasi' => Aspirasi::find($id),
+        return view('home-user.dashboard.index', [
+            'title' => 'Dashboard',
+            'aspirasis' => Aspirasi::where('user_id', Auth::user()->id)->get(),
         ]);
     }
 
@@ -99,9 +104,12 @@ class AspirasiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($slug)
     {
-        //
+        return view('home-user.dashboard.edit', [
+            'title' => 'Update Aspirasi',
+            'aspirasi' => Aspirasi::where('slug', $slug)->get(),
+        ]);
     }
 
     /**
@@ -111,9 +119,9 @@ class AspirasiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $slug)
     {
-        //
+        
     }
 
     /**
@@ -124,6 +132,9 @@ class AspirasiController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $dataImage = Image::where('aspirasi_id', $id)->delete();
+        $data = Aspirasi::where('id', $id)->delete();
+
+        return redirect()->back();
     }
 }

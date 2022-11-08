@@ -30,7 +30,7 @@
 
           <div class="col-md-12 mb-2">
             <label for="image" class="form-label">Image *</label>
-            <input type="file" class="form-control" id="image" name="img[]" multiple="true" required>
+            <input type="file" class="form-control" id="image" name="img[]" multiple="true">
          </div>
           <div class="d-grid gap-2 mt-5">
            <button class="btn btn-primary fw-bold" type="submit">Submit Aspirasi</button>

@@ -15,18 +15,20 @@
               <th scope="col">Terdaftar</th>
               <th scope="col">Aspirasi</th>
               <th scope="col">Laporan</th>
-              <th scope="col">Aksi</th>
+              <th scope="col">Status</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1</td>
-              <td>random</td>
-              <td>data</td>
-              <td>placeholder</td>
-              <td>text</td>
-              <td>text</td>
-            </tr>   
+            @foreach ($aspirasis as $aspirasi)
+              <tr>
+                <td>{{ $loop->iteration }}</td>
+                <td>{{ $aspirasi->user->nama_lengkap }}</td>
+                <td>{{ $aspirasi->tgl_pengaduan }}</td>
+                <td>{{ $aspirasi->judul }}</td>
+                <td>{{ $aspirasi->body }}</td>
+                <td>{{ $aspirasi->status }}</td>
+              </tr>    
+            @endforeach
           </tbody>
         </table>
       </div>

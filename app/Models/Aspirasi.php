@@ -27,6 +27,6 @@ class Aspirasi extends Model
 
     public function getRouteKeyName()
     {
-        return 'status';
+        return 'slug';
     }
 }
