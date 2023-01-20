@@ -6,8 +6,9 @@
     <title>{{ $title }}</title>
 
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.0-beta.0/dist/trix.css">
+    <script type="text/javascript" src="https://unpkg.com/trix@2.0.0-beta.0/dist/trix.umd.min.js"></script>
 
     <style>
       .bd-placeholder-img {
@@ -29,7 +30,7 @@
   <body>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
          <div class="container">
-            <a class="navbar-brand">ASM SUL-SEL</a>
+            <a href="/" class="navbar-brand">ASM SUL-SEL</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                <span class="navbar-toggler-icon"></span>
             </button>

@@ -32,6 +32,7 @@ Route::get('/cara-pegajuan', function () {
 });
 
 Route::get('/aspirasi-masuk', [PostAspirasiController::class, 'index']);
+
 Route::get('/aspirasi-masuk/{aspirasi:slug}', [PostAspirasiController::class, 'show']);
 
 Route::middleware('guest')->group(function () {
@@ -57,8 +58,9 @@ Route::middleware(['auth', 'checkRole:admin'])->group(function () {
     Route::get('/admin', [AdminAspirasiController::class, 'index']);
 
     Route::get('/admin/aspirasi-masuk', [AdminAspirasiController::class, 'showAll']);
-    Route::get('/admin/aspirasi-show/{aspirasi:slug}', [AdminAspirasiController::class, 'show']);
+    // Route::get('/admin/aspirasi-masuk/{aspirasi:slug}', [AdminAspirasiController::class, 'show']);
     Route::get('/admin/aspirasi-edit/{aspirasi:slug}', [AdminAspirasiController::class, 'edit']);
+    Route::post('/admin/aspirasi-edit/{aspirasi:slug}', [AdminAspirasiController::class, 'update']);
     
     Route::get('/admin/feedback', function () {
         return view('home-admin.feedbacks.index');

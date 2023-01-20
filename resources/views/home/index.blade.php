@@ -15,7 +15,7 @@
 
          <div class="row mt-4 d-flex justify-content-center">
             <div class="col-sm-3">
-                  <div class="card text-dark bg-white mx-3 mb-3" style="max-width: 18rem;">
+                  <div class="card text-dark bg-white mx-3 mb-3" style="max-width: 22rem;">
                      <div class="card-header bg-danger text-white fw-bold">Jumlah Aspirasi</div>
                         <div class="card-body">
                         <img src="img-bg/icon_1.png" class="opacity-50" style="max-width: 50px" alt="">
@@ -24,7 +24,7 @@
                   </div>
             </div>
             <div class="col-sm-3">
-                  <div class="card text-dark bg-white mx-3 mb-3" style="max-width: 18rem;">
+                  <div class="card text-dark bg-white mx-3 mb-3" style="max-width: 22rem;">
                      <div class="card-header bg-warning text-white fw-bold">Aspirasi Diproses</div>
                         <div class="card-body">
                         <img src="img-bg/icon_2.png" class="opacity-50" style="max-width: 50px" alt="">
@@ -33,7 +33,7 @@
                   </div>
             </div>
             <div class="col-sm-3">
-                  <div class="card text-dark bg-white mx-3 mb-3" style="max-width: 18rem;">
+                  <div class="card text-dark bg-white mx-3 mb-3" style="max-width: 22rem;">
                      <div class="card-header bg-success text-white fw-bold">Aspirasi Selesai</div>
                         <div class="card-body">
                         <img src="img-bg/icon_3.png" class="opacity-50" style="max-width: 50px" alt="">

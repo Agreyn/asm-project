@@ -6,6 +6,13 @@
     <h1 class="h2">Dashboard</h1>
   </div>
 
+  @if(session('status'))
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    {{ session('status') }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  @endif
+
   <div class="table-responsive">
     <table class="table table-striped table-sm">
       <thead>
@@ -26,11 +33,11 @@
           <td>{{ $aspirasi->alamat }}</td>
           <td>
             <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-              <a href="/admin/aspirasi-show/{{ $aspirasi->slug }}" class="btn btn-sm btn-success"><i class="bi bi-eye"></i></a>
+              <a href="/aspirasi-masuk/{{ $aspirasi->slug }}" class="btn btn-sm btn-success"><i class="bi bi-eye"></i></a>
               <a href="/admin/aspirasi-edit/{{ $aspirasi->slug }}" class="btn btn-sm btn-warning"><i class="bi bi-pen"></i></a>
-              <form action="/aspirasi-masuk" method="post">
+              {{-- <form action="/aspirasi-masuk" method="post">
                 <button type="submit" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
-              </form>
+              </form> --}}
             </div>
           </td>
         </tr>   

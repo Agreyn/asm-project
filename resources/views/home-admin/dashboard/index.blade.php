@@ -26,7 +26,19 @@
                 <td>{{ $aspirasi->tgl_pengaduan }}</td>
                 <td>{{ $aspirasi->judul }}</td>
                 <td>{{ $aspirasi->body }}</td>
-                <td>{{ $aspirasi->status }}</td>
+                @php
+                  $bg_color = 'info';
+                  if($aspirasi->status == 'DIVERIFIKASI'){
+                    $bg_color = 'primary';
+                  }elseif($aspirasi->status == 'PROSES'){
+                    $bg_color = 'warning';
+                  }elseif($aspirasi->status == 'SELESAI'){
+                    $bg_color = 'success';
+                  }
+                @endphp
+                <td>
+                  <button class="btn btn-{{ $bg_color }} btn-sm" type="button">{{ $aspirasi->status }}</button>
+                </td>
               </tr>    
             @endforeach
           </tbody>
@@ -35,3 +47,4 @@
     </main>
 
   @endsection
+ 

@@ -38,4 +38,18 @@ class AdminAspirasiController extends Controller
             'aspirasi' => $aspirasi,
         ]);
     }
+
+    public function update(Request $request, Aspirasi $aspirasi)
+    {
+        $validateUpdate = $request->validate([
+            'status' => 'required',
+        ]);
+
+        Aspirasi::where('slug', $aspirasi->slug)->update($validateUpdate);
+        return redirect('/admin/aspirasi-masuk')->with('status', 'Data Berhasil Diupdate');
+    }
+
+    public function delete(Request $request){
+        
+    }
 }

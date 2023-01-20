@@ -50,12 +50,7 @@
          <div class="col-md-8 mb-3">
             <input type="number" class="form-control" id="telp" value="{{ $user->telp }}" name="telp" readonly>
          </div>
-         <div class="col-md-4 text-center mb-3">
-            <label for="email" class="form-label">Email *</label>
-         </div>
-         <div class="col-md-8 mb-3">
-            <input type="email" class="form-control" id="email" value="{{ $user->email }}" name="email" readonly>
-         </div>
+      
       </div>
      <div class="d-grid gap-2 my-4 text-end d-md-block">
          <button class="btn btn-primary btn-sm px-4" type="submit">Update Profile *</button>

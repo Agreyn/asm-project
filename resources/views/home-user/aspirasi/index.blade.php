@@ -15,7 +15,7 @@
       <form class="row" action="/aspirasi" method="post" enctype="multipart/form-data">
          @csrf
          <div class="col-md-6 mb-2">
-            <label for="judul_laporan" class="form-label">Judul Laporan *</label>
+            <label for="judul_laporan" class="form-label">Judul Aspirasi *</label>
             <input type="text" class="form-control" id="judul_laporan" name="judul" value="{{ old('judul') }}" required>
          </div>
          <div class="col-md-6 mb-2">
@@ -24,8 +24,9 @@
          </div>
 
          <div class="col-md-12 mb-2">
-            <label for="laporan" class="form-label">Laporan *</label>
-            <textarea class="form-control" id="laporan" name="body" required>{{ old('body') }}</textarea>
+            <label for="laporan" class="form-label">Aspirasi *</label>
+            <input id="i" type="hidden" name="body" required>
+            <trix-editor input="i">{{ old('body') }}</trix-editor>
          </div>
 
           <div class="col-md-12 mb-2">

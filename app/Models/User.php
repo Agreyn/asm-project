@@ -47,7 +47,6 @@ class User extends Authenticatable
     public function aspirasi(){
 
         return $this->hasMany(Aspirasi::class);
-        
     }
 
     public function getRouteKeyName()
