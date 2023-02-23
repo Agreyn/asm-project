@@ -16,7 +16,7 @@ class CreateImage extends Migration
         Schema::create('images', function (Blueprint $table) {
             $table->id();
             $table->string('path');
-            $table->foreignId('user_id');
+            // $table->foreignId('user_id');
             $table->foreignId('aspirasi_id');
             $table->timestamps();
         });
